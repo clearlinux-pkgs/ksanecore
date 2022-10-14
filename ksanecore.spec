@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko.becker@kde.org)
 #
 Name     : ksanecore
-Version  : 22.08.1
-Release  : 2
-URL      : https://download.kde.org/stable/release-service/22.08.1/src/ksanecore-22.08.1.tar.xz
-Source0  : https://download.kde.org/stable/release-service/22.08.1/src/ksanecore-22.08.1.tar.xz
-Source1  : https://download.kde.org/stable/release-service/22.08.1/src/ksanecore-22.08.1.tar.xz.sig
+Version  : 22.08.2
+Release  : 3
+URL      : https://download.kde.org/stable/release-service/22.08.2/src/ksanecore-22.08.2.tar.xz
+Source0  : https://download.kde.org/stable/release-service/22.08.2/src/ksanecore-22.08.2.tar.xz
+Source1  : https://download.kde.org/stable/release-service/22.08.2/src/ksanecore-22.08.2.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-2-Clause BSD-3-Clause CC0-1.0 LGPL-2.1 LGPL-3.0
@@ -67,15 +67,15 @@ locales components for the ksanecore package.
 
 
 %prep
-%setup -q -n ksanecore-22.08.1
-cd %{_builddir}/ksanecore-22.08.1
+%setup -q -n ksanecore-22.08.2
+cd %{_builddir}/ksanecore-22.08.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1662781991
+export SOURCE_DATE_EPOCH=1665761553
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -91,16 +91,16 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1662781991
+export SOURCE_DATE_EPOCH=1665761553
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ksanecore
-cp %{_builddir}/ksanecore-%{version}/LICENSES/BSD-2-Clause.txt %{buildroot}/usr/share/package-licenses/ksanecore/48425c0d29eec28e01be25cae932f6dce8e4e278
-cp %{_builddir}/ksanecore-%{version}/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/ksanecore/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
-cp %{_builddir}/ksanecore-%{version}/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/ksanecore/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0
-cp %{_builddir}/ksanecore-%{version}/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/ksanecore/81b58c89ceef8e9f8bd5d00a287edbd15f9d3567
-cp %{_builddir}/ksanecore-%{version}/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/ksanecore/b9c8ec07abddb6bfbe08cb87aa8f68c2c2a1152f
-cp %{_builddir}/ksanecore-%{version}/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/ksanecore/e458941548e0864907e654fa2e192844ae90fc32
-cp %{_builddir}/ksanecore-%{version}/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/ksanecore/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/ksanecore-%{version}/LICENSES/BSD-2-Clause.txt %{buildroot}/usr/share/package-licenses/ksanecore/48425c0d29eec28e01be25cae932f6dce8e4e278 || :
+cp %{_builddir}/ksanecore-%{version}/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/ksanecore/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c || :
+cp %{_builddir}/ksanecore-%{version}/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/ksanecore/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0 || :
+cp %{_builddir}/ksanecore-%{version}/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/ksanecore/81b58c89ceef8e9f8bd5d00a287edbd15f9d3567 || :
+cp %{_builddir}/ksanecore-%{version}/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/ksanecore/b9c8ec07abddb6bfbe08cb87aa8f68c2c2a1152f || :
+cp %{_builddir}/ksanecore-%{version}/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/ksanecore/e458941548e0864907e654fa2e192844ae90fc32 || :
+cp %{_builddir}/ksanecore-%{version}/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/ksanecore/e458941548e0864907e654fa2e192844ae90fc32 || :
 pushd clr-build
 %make_install
 popd
@@ -128,7 +128,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKSaneCore.so.1
-/usr/lib64/libKSaneCore.so.22.08.1
+/usr/lib64/libKSaneCore.so.22.08.2
 
 %files license
 %defattr(0644,root,root,0755)
