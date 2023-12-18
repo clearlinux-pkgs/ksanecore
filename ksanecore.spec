@@ -8,11 +8,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko.becker@kde.org)
 #
 Name     : ksanecore
-Version  : 23.08.3
-Release  : 19
-URL      : https://download.kde.org/stable/release-service/23.08.3/src/ksanecore-23.08.3.tar.xz
-Source0  : https://download.kde.org/stable/release-service/23.08.3/src/ksanecore-23.08.3.tar.xz
-Source1  : https://download.kde.org/stable/release-service/23.08.3/src/ksanecore-23.08.3.tar.xz.sig
+Version  : 23.08.4
+Release  : 20
+URL      : https://download.kde.org/stable/release-service/23.08.4/src/ksanecore-23.08.4.tar.xz
+Source0  : https://download.kde.org/stable/release-service/23.08.4/src/ksanecore-23.08.4.tar.xz
+Source1  : https://download.kde.org/stable/release-service/23.08.4/src/ksanecore-23.08.4.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-2-Clause BSD-3-Clause CC0-1.0 LGPL-2.1 LGPL-3.0
@@ -72,15 +72,15 @@ locales components for the ksanecore package.
 
 
 %prep
-%setup -q -n ksanecore-23.08.3
-cd %{_builddir}/ksanecore-23.08.3
+%setup -q -n ksanecore-23.08.4
+cd %{_builddir}/ksanecore-23.08.4
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1702003281
+export SOURCE_DATE_EPOCH=1702921078
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -139,7 +139,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1702003281
+export SOURCE_DATE_EPOCH=1702921078
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ksanecore
 cp %{_builddir}/ksanecore-%{version}/LICENSES/BSD-2-Clause.txt %{buildroot}/usr/share/package-licenses/ksanecore/48425c0d29eec28e01be25cae932f6dce8e4e278 || :
@@ -179,9 +179,9 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libKSaneCore.so.23.08.3
+/V3/usr/lib64/libKSaneCore.so.23.08.4
 /usr/lib64/libKSaneCore.so.1
-/usr/lib64/libKSaneCore.so.23.08.3
+/usr/lib64/libKSaneCore.so.23.08.4
 
 %files license
 %defattr(0644,root,root,0755)
